@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style media="screen">
+		body {
+			color: green;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<script type="text/javascript">
+		/*
+			var tab = [1,5,8,13,17,20,24,29,30,36,42,49,50,60];
+			var a = -1;
+			var b = tab.length;
+			var y = 60;
+			var count = 0;
+
+			function dikotomie(tab, a, b, y){
+				x = tab[Math.round((b + a)/2)];
+				console.log("count : "+count);
+				count++;
+				console.log("entre "+tab[a]+" et "+tab[b]);
+				console.log("propose : "+x);
+				console.log("y = : "+y);
+				if (x == tab[b] || x == tab[a]) {
+					console.log("y est pas dans le tab");
+					return x;
+				}
+				if (x == y) {
+					console.log("y est dans le tab");
+				}
+				if (x < y) {
+					console.log("plus grand");
+					console.log("           ");
+					dikotomie(tab, a=Math.round((b + a)/2), b, y);
+				}
+				if (x > y) {
+					console.log("plus petit");
+					console.log("           ");
+					dikotomie(tab, a, b=Math.round((b + a)/2), y);
+				}
+
+			}
+			//dikotomie(tab, a, b, y);
+
+
+			var tab = [1,5,8,13,17,20,24,29,30,36,42,49,50,60,'ddd'];
+			var a = -1;
+			var b = tab.length - 1;
+			var x = Math.ceil((a + b)/2);
+			var y = 24;
+
+			while (a < b) {
+				if (tab[x] ===  y) {
+					a = x;
+					break;
+				}
+				else {
+					if (tab[x] > y) {
+						b = x-1;
+					}else {
+						a = x+1;
+					}
+					x = Math.ceil((a + b)/2);
+				}
+			}
+			if (tab[a] === y) {
+				console.log("trouvé");
+			}else {
+				console.log("pas trouvé");
+			}
+
+
+			var tabB = [0,1.6];
+			var tabA = [0,1]
+			var index = 1;
+			var distance = 225000000;
+			var distanceA = 0;
+			var distanceB = 0;
+			while (distanceA + distanceB < distance) {
+				index++;
+				tabA[index] = tabA[index-1] + tabA[index-2];
+				tabB[index] = tabB[index-1] * 1.6;
+				distanceA = tabA[index];
+				distanceB = tabB[index];
+			}
+		console.table(tabA);
+
+
+
+
+		 var alph = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+		 function cesar(stg, dcl) {
+			 var resp = [];
+			 stg = stg.toLowerCase();
+			 if (!Number.isInteger(dcl)) {
+				 return 'pas un nombre !';
+			 }
+			 //on boucle les caractères de la string
+			 for (var i = 0; i < stg.length; i++) {
+				 //si le caractere est bien dans l'alphabet
+				 if (alph.indexOf(stg[i]) >= 0) {
+					 //si le decalage doit ou non revenir au debut du tableau
+					 if (alph[alph.indexOf(stg[i])+dcl]) {
+						 resp[i] = alph[alph.indexOf(stg[i])+dcl];
+					 }
+					 //si oui on enleve la longueur du tableau à l'index du caractere + le decalage, le ramenant donc au debut du tableau et continuant le decalage avec le reste
+					 else {
+						resp[i] = alph[(alph.indexOf(stg[i])+dcl)-alph.length];
+					 }
+				 }
+				 //si le caractere n'est pas une vartre de l'alphabet
+				 else {
+					return 'pas des varres !';
+				 }
+			 }
+			 return resp;
+		 }
+
+		 console.log(cesar('baC', 4));
+
+		co2();
+		function co2() {
+			chine = 14000000000;
+			france = 48500000;
+			pourcentage = 1.02;
+			année = 1;
+			while (france <= chine*pourcentage - chine) {
+				chine = chine*pourcentage;
+				pourcentage = pourcentage-0.001;
+				année++;
+			}
+			console.log("france : "+france);
+		  console.log("chine : "+chine);
+			console.log("année : "+année);
+
+		}
+
+
+		function convertisseurRomain(chiffre) {
+			var valeurDecimale = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 ];
+			var chiffreRomains = [ 'M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I' ];
+			var resultat = [];
+			var i = 0;
+			while (i <= valeurDecimale.length) {
+				if (chiffre >= valeurDecimale[i]) {
+					chiffre = chiffre-valeurDecimale[i];
+					resultat += chiffreRomains[i];
+				}
+				else {
+					i++
+				}
+			}
+			return resultat;
+		}
+
+		console.log(convertisseurRomain(5648));
+	*/
+
+		// function meilleurInvestissement(arr) {
+		// 	var jours = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+		// 	var benef = 1;
+		// 	var result = [];
+		// 	for (var i = 0; i < arr.length; i++) {
+		// 		for (var a = i + 1; a < arr.length; a++) {
+		// 			if (benef < arr[a] - arr[i]) {
+		// 				benef = arr[a] - arr[i];
+		// 				result = [];
+		// 				result.push(jours[i]);
+		// 				result.push(jours[a]);
+		// 			}
+		// 		}
+		// 	}
+		// 	return "le meilleur jour pour investir est le \x1b[35m" + result[0] + "\x1b[39m, puis revendre le \x1b[35m" + result[1] + "\x1b[39m generant un benefice de \x1b[32m" + benef + " $";
+		// }
+		//
+		// console.log(meilleurInvestissement([85, 110, 20, 2, 80, 3, 64]));
+
+		// function Prim(nb) {
+		// 	for (var i = 2; i < (nb/2)+1; i++) {
+		// 		if (nb%i <= 0) {
+		// 			return 'pas primaire';
+		// 		}
+		// 	}
+		// 	return 'primaire';
+		// }
+		// console.log(Prim(11));
+
+		// function pair(nb){
+		// 	if (nb%2 == 0) {
+		// 		nb = nb/2;
+		// 	}else {
+		// 		nb = nb*3+1
+		// 	}
+		// 	console.log(nb);
+		// 	pair(nb);
+		// }
+		// console.log(pair(16));
+
+		// function rd(nun, ndeux) {
+		// 	console.log(Math.floor(Math.random()* (ndeux-nun) + nun));
+		// }
+		// rd(4, 8);
+
+		// var summ = 0;
+		// var w = false;
+		// function rd(nun, ndeux) {
+		// 	for (var i = 0; i < 3; i++) {
+		// 		var nb = Math.floor(Math.random()* (ndeux-nun) + nun);
+		// 		console.log(nb);
+		// 		summ += nb;
+		// 		if (nb == 4) {
+		// 			w = true;
+		// 		}
+		// 	}
+		// 	if (summ == 7 && w === true) {
+		// 		console.log('win');
+		// 	}
+
+			// var len = tab.length;
+			// for (var i = 0; i < len; i++) {
+			// 	for (var j = 0; j < len; j++) {
+			// 		if (tab[j] > tab[j + 1]) {
+			// 			var tmp = tab[j];
+			// 				tab[j] = tab[j + 1];
+			// 				tab[j + 1] = tmp;
+			// 			}
+			// 	}
+			// }
+
+		// }
+	 	// rd(1, 7);
+		// function BubbleSort() {
+		// 	var tab = [-1, 5, 3, -9, 0, 21, 4, 53,4,7,21,45,3,89,3,9,23,8,4,84]
+		// 	var count = true;
+		// 	var y = 0;
+		// 	while (count) {
+		// 		count = false;
+		// 		for (var i = 0; i < tab.length-y; i++) {
+		// 			if (tab[i] > tab[i+1]) {
+		// 				var a = tab[i];
+		// 				tab[i] = tab[i+1];
+		// 				tab[i+1] = a;
+		// 				count = true;
+		// 			}
+		// 		}
+		// 		y++;
+		// 	}
+		// 	console.log(y);
+		// 	return tab;
+		// }
+		//
+		// console.log(BubbleSort());
+
+		function reverse(tab) {
+			for (var i = 0; i < tab.length/2; i++) {
+				let a = tab[i];
+				console.log(tab[tab.length-i]);
+				tab[i] = tab[tab.length-i];
+				tab[tab.length-i] = a;
+			}
+			return tab
+		}
+		console.log(reverse([1,2,3,4,5,6,7,8,9]));
+	</script>
+</body>
+
+</html>
